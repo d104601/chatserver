@@ -1,0 +1,75 @@
+# Python 관련
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 가상환경
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE 관련
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.DS_Store
+.history
+
+# 로그 파일
+*.log
+logs/
+
+# 데이터베이스 파일
+*.db
+*.sqlite
+*.sqlite3
+
+# 테스트 캐시
+.pytest_cache/
+.coverage
+htmlcov/
+
+# FastAPI 특화
+__pycache__/
+.coverage
+htmlcov/
+
+# 임시 파일
+tmp/
+temp/
+
+# 개인 설정 파일
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 문서 빌드
+docs/_build/ 
