@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from app.models.user import User
 import bcrypt
+from typing import Dict, Any
 
 
 class UserService:
@@ -17,7 +18,7 @@ class UserService:
         return db.query(User).filter(User.email == email).first()
 
     @staticmethod
-    def create_user(db: Session, email: str, username: str, password: str):
+    def create_user(db: Session, email: str, username: str, password: str) -> User:
         # 이메일 중복 확인
         if UserService.get_user_by_email(db, email):
             raise HTTPException(status_code=400, detail="Email already exists")
@@ -37,7 +38,7 @@ class UserService:
         return new_user
 
     @staticmethod
-    def verify_user_credentials(db: Session, email: str, password: str):
+    def verify_user_credentials(db: Session, email: str, password: str) -> User:
         user = UserService.get_user_by_email(db, email)
         if not user:
             raise HTTPException(status_code=400, detail="User not found")
